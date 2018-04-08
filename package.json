@@ -1,0 +1,19 @@
+{
+    "name": "pugito",
+    "version": "0.0.1",
+    "description": "Simple tool to generate static sites using Pug",
+    "license": "MIT",
+    "main": "main.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/marciolucca/pugito.git"
+    },
+    "scripts": {},
+    "dependencies": {
+        "fs-extra": "^5.0.0",
+        "klaw-sync": "^3.0.2",
+        "live-server": "^1.2.0",
+        "pug": "^2.0.0-rc.4",
+        "watch": "^1.0.2"
+    }
+}
