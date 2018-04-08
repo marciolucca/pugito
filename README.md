@@ -10,18 +10,34 @@ After installing the latest version of [Node.js](http://nodejs.org/), install wi
 $ npm install pugito -g
 ```
 
-and run with:
+## Commands
+### compile
+
+Scans the `src/` folder and copies all files to `dist/` while processing `.pug` to `.html`. 
+
+Pug templates and partials (also called includes) are not meant to be processed directly. To avoid it, follow the file name patterns from [defaults](#defaults) section.
 
 ```bash
 $ pugito compile
 ```
 
-## Commands
- - `$ pugito compile`: Scans the `src/` folder and copies all files to `dist/` while processing `.pug` to `.html`
- - `$ pugito clean`: Erases `dist/` folder
- - `$ pugito live`: Serves `dist/` on `localhost:8080`. Keeps watching `src/` and calling `compile` on any change
+### clean
 
-### Defaults
+Erases `dist/` folder.
+
+```bash
+$ pugito clean
+```
+
+### live
+
+Serves `dist/` on `localhost:8080`. Keeps watching `src/` and calling `compile` on any change detected.
+
+```bash
+$ pugito live
+```
+
+## Defaults
  - Local server runs on port `8080`
  - Source base directory is `src/`
  - Destination base directory is `dist/`
