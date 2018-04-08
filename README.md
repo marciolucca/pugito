@@ -22,11 +22,11 @@ $ pugito compile
  - `$ pugito live`: Serves `dist/` on `localhost:8080`. Keeps watching `src/` and calling `compile` on any change
 
 ### Defaults
- - Local server runs on port 8080
+ - Local server runs on port `8080`
  - Source base directory is `src/`
  - Destination base directory is `dist/`
- - Valid file name for templates shall contain `template.`. For example: `template.main.pug`
- - Valid file name for partials shall contain `include.`. For example: `include.menu.pug`
+ - Valid file name for templates shall contain `template.` (example: `template.main.pug`)
+ - Valid file name for partials shall contain `include.` (example: `include.menu.pug`)
 
 ## TODO
  - Make local server port configurable
