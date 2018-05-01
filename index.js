@@ -7,7 +7,7 @@ const liveServer = require('live-server');
 const watch = require('watch');
 const pug = require('pug');
 
-const SRC = "src"
+const SRC = 'src'
 const SRC_DIR = SRC + '/';
 const DIST_DIR = 'dist/';
 const LIVE_SERVER_CONFIG = {
@@ -49,6 +49,17 @@ const live = () => {
 
 const args = process.argv.slice(2);
 
-if (args[0] === "clean") clean();
-else if (args[0] === "compile") compile();
-else if (args[0] === "live") live();
+if (args[0] === 'clean') clean();
+else if (args[0] === 'compile') compile();
+else if (args[0] === 'live') live();
+else {
+    console.log();
+    console.log('Usage: pugito <command>');
+    console.log();
+    console.log('where <command> is one of:');
+    console.log();
+    console.log('  clean          deletes all content on destination path');
+    console.log('  compile        scans source path and generates content into destination path');
+    console.log('  live           runs live-server on localhost:8080 and watches source path for compilations');
+    console.log();
+}
