@@ -15,7 +15,7 @@ $ npm install pugito -g
 
 Scans the `src/` folder and copies all files to `dist/` while processing `.pug` to `.html`. 
 
-Pug templates and partials (also called includes) are not meant to be processed directly. To avoid it, follow the file name patterns from [defaults](#defaults) section.
+Pug templates and partials (also called includes) are not meant to be processed directly. To avoid it, follow the file name patterns from [Options](#options) section.
 
 ```bash
 $ pugito compile
@@ -37,16 +37,14 @@ Serves `dist/` on `localhost:8080`. Keeps watching `src/` and calling `compile` 
 $ pugito live
 ```
 
-## Defaults
- - Local server runs on port `8080`
- - Source base directory is `src/`
- - Destination base directory is `dist/`
- - Valid file name for templates shall contain `template.` (example: `template.main.pug`)
- - Valid file name for partials shall contain `include.` (example: `include.menu.pug`)
+## Options
+-s, --src [path]       source path (default: "src")
+-d, --dist [path]      destination path (default: "dist")
+-p, --port [number]    port for running in localhost (default: "8080")
+-t, --template [name]  what the name for a template file should contain (default: "template")
+-i, --include [name]   what the name for an include/partial file should contain (default: "include")
+-h, --help             output usage information
 
 ## TODO
- - Make local server port configurable
- - Make src and dist folders configurable
- - Make Template and partial file names patterns configurable
- - Create descriptive console output for file processing
+ - Create descriptive console output of file processing
  - Treat common errors to give better user feedback

@@ -9,9 +9,10 @@
         "url": "https://github.com/marciolucca/pugito.git"
     },
     "bin": {
-        "pugito": "./index.js"
+        "pugito": "./cli.js"
     },
     "dependencies": {
+        "commander": "^2.19.0",
         "fs-extra": "^7.0.0",
         "klaw-sync": "^6.0.0",
         "live-server": "^1.2.0",
