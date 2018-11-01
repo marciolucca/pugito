@@ -12,10 +12,10 @@
         "pugito": "./index.js"
     },
     "dependencies": {
-        "fs-extra": "^5.0.0",
-        "klaw-sync": "^3.0.2",
+        "fs-extra": "^7.0.0",
+        "klaw-sync": "^6.0.0",
         "live-server": "^1.2.0",
-        "pug": "^2.0.0-rc.4",
+        "pug": "^2.0.3",
         "watch": "^1.0.2"
     }
 }
