@@ -38,12 +38,12 @@ $ pugito live
 ```
 
 ## Options
--s, --src [path]       source path (default: "src")
--d, --dist [path]      destination path (default: "dist")
--p, --port [number]    port for running in localhost (default: "8080")
--t, --template [name]  what the name for a template file should contain (default: "template")
--i, --include [name]   what the name for an include/partial file should contain (default: "include")
--h, --help             output usage information
+ - -s, --src [path]       source path (default: "src")
+ - -d, --dist [path]      destination path (default: "dist")
+ - -p, --port [number]    port for running in localhost (default: "8080")
+ - -t, --template [name]  what the name for a template file should contain (default: "template")
+ - -i, --include [name]   what the name for an include/partial file should contain (default: "include")
+ - -h, --help             output usage information
 
 ## TODO
  - Create descriptive console output of file processing
