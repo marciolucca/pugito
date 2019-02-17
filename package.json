@@ -13,9 +13,9 @@
     },
     "dependencies": {
         "commander": "^2.19.0",
-        "fs-extra": "^7.0.0",
+        "fs-extra": "^7.0.1",
         "klaw-sync": "^6.0.0",
-        "live-server": "^1.2.0",
+        "live-server": "^1.2.1",
         "pug": "^2.0.3",
         "watch": "^1.0.2"
     }
