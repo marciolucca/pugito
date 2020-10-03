@@ -1,26 +1,16 @@
 const fs = require('fs-extra');
 const path = require('path');
 const klawSync = require('klaw-sync');
-const liveServer = require('live-server');
 const watch = require('watch');
 const pug = require('pug');
 
 class Pugito {
 
-    constructor(srcPath, distPath, livePort, templatesPattern, includesPattern) {
+    constructor(srcPath, distPath, templatesPattern, includesPattern) {
         this.srcPath = srcPath;
         this.distPath = distPath;
         this.templatesPattern = templatesPattern;
         this.includesPattern = includesPattern;
-        this.liveServerConfig = {
-            host: '0.0.0.0',
-            port: livePort,
-            root: distPath,
-            watch: [distPath],
-            open: false,
-            wait: 1000,
-            logLevel: 2
-        }
     }
 
     clean() {
@@ -47,7 +37,6 @@ class Pugito {
         watch.watchTree(this.srcPath, { interval: 1 }, (f, curr, prev) => {
             this.compile();
         });
-        liveServer.start(this.liveServerConfig);
     }
 }
 

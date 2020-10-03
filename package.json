@@ -1,7 +1,7 @@
 {
     "name": "pugito",
     "version": "0.1.1",
-    "description": "Simple tool to generate static sites using Pug",
+    "description": "Simple tool to generate static sites using PugJS",
     "license": "MIT",
     "author": "Marcio Lucca <mrclucca@gmail.com>",
     "repository": {
@@ -12,11 +12,10 @@
         "pugito": "./cli.js"
     },
     "dependencies": {
-        "commander": "^2.19.0",
-        "fs-extra": "^7.0.1",
+        "commander": "^6.1.0",
+        "fs-extra": "^9.0.1",
         "klaw-sync": "^6.0.0",
-        "live-server": "^1.2.1",
-        "pug": "^2.0.3",
+        "pug": "^3.0.0",
         "watch": "^1.0.2"
     }
 }

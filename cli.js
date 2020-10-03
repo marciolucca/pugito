@@ -7,7 +7,7 @@ program
     .version('0.1.0')
     .option('clean', 'Deletes all content on destination path')
     .option('compile', 'Scans source path and generates content into destination path')
-    .option('live', 'Runs live-server on localhost:(port) and watches source path for live compilation')
+    .option('live', 'Watches source path for live compilation')
     .option('-s, --src [path]', 'Source path', 'src')
     .option('-d, --dist [path]', 'Destination path', 'dist')
     .option('-p, --port [number]', 'Port for running in localhost', '8080')
@@ -18,7 +18,6 @@ program
 const pugito = new Pugito(
     program.src,
     program.dist,
-    program.port,
     program.template,
     program.include
 );

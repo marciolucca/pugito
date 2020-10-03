@@ -1,5 +1,5 @@
 const Pugito = require("../Pugito.js");
-const pugito = new Pugito('src', 'dist', '8080', 'template', 'include');
+const pugito = new Pugito('src', 'dist', 'template', 'include');
 
 pugito.clean();
 pugito.compile();
