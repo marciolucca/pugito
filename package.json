@@ -8,8 +8,11 @@
         "type": "git",
         "url": "https://github.com/marciolucca/pugito.git"
     },
+    "scripts": {
+        "test": "jest"
+    },
     "bin": {
-        "pugito": "./cli.js"
+        "pugito": "./src/main/cli.js"
     },
     "dependencies": {
         "commander": "^6.1.0",
@@ -17,5 +20,8 @@
         "klaw-sync": "^6.0.0",
         "pug": "^3.0.0",
         "watch": "^1.0.2"
+    },
+    "devDependencies": {
+        "jest": "^26.4.2"
     }
 }
