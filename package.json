@@ -1,6 +1,6 @@
 {
     "name": "pugito",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Simple tool to generate static sites using PugJS",
     "license": "MIT",
     "author": "Marcio Lucca <mrclucca@gmail.com>",
