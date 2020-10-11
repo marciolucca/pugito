@@ -11,7 +11,7 @@ const TARGET_PATH_INDEX_HTML = 'index.html';
 beforeEach(() => fs.removeSync(DIR_TARGET));
 
 test('compile', () => {
-    new Pugito(DIR_SOURCE, DIR_TARGET, NAME_PATTERN_TEMPLATE, NAME_PATTERN_INCLUDE).compile();
+    Pugito.compile(DIR_SOURCE, DIR_TARGET, NAME_PATTERN_TEMPLATE, NAME_PATTERN_INCLUDE);
     expect(fs.existsSync(path.resolve(path.join(DIR_TARGET, TARGET_PATH_INDEX_HTML)))).toBe(true);
 });
 

@@ -5,25 +5,20 @@ const watch = require('watch');
 
 class Pugito {
 
-    constructor(sourceDir, targetDir, templatesPattern, includesPattern) {
-        this.sourceDir = sourceDir;
-        this.targetDir = targetDir;
-        this.fileScanner = new FileScanner(sourceDir, templatesPattern, includesPattern);
-        this.fileParser = new FileParser(sourceDir, targetDir);
+    static clean(targetDir) {
+        fs.removeSync(targetDir);
     }
 
-    clean() {
-        fs.removeSync(this.targetDir);
-    }
-
-    compile() {
-        this.fileParser.copyFiles(this.fileScanner.getFilePathsToCopy());
-        this.fileParser.renderFiles(this.fileScanner.getFilePathsToRender());
+    static compile(sourceDir, targetDir, templatesPattern, includesPattern) {
+        const fileScanner = new FileScanner(sourceDir, templatesPattern, includesPattern);
+        const fileParser = new FileParser(sourceDir, targetDir);
+        fileParser.copyFiles(fileScanner.getFilePathsToCopy());
+        fileParser.renderFiles(fileScanner.getFilePathsToRender());
     };
 
-    live() {
-        watch.watchTree(this.sourceDir, { interval: 1 }, (f, curr, prev) => {
-            this.compile();
+    static live(sourceDir, targetDir, templatesPattern, includesPattern) {
+        watch.watchTree(sourceDir, { interval: 1 }, (f, curr, prev) => {
+            Pugito.compile(sourceDir, targetDir, templatesPattern, includesPattern);
         });
     }
 }
