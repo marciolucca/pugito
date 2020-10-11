@@ -3,26 +3,24 @@
 const program = require('commander');
 const Pugito = require('./Pugito');
 
-program
-    .version('0.1.0')
-    .option('clean', 'Deletes all content on destination path')
-    .option('compile', 'Scans source path and generates content into destination path')
-    .option('live', 'Watches source path for live compilation')
-    .option('-s, --src [path]', 'Source path', 'src')
-    .option('-d, --dist [path]', 'Destination path', 'dist')
-    .option('-p, --port [number]', 'Port for running in localhost', '8080')
-    .option('-t, --template [name]', 'What the name for a template file should contain', 'template')
-    .option('-i, --include [name]', 'What the name for an include/partial file should contain', 'include')
-    .parse(process.argv);
+program.version('1.0.2')
+    .description('Simple tool to generate static sites using PugJS');
 
-const pugito = new Pugito(
-    program.src,
-    program.dist,
-    program.template,
-    program.include
-);
+program.command('clean')
+    .action(options => Pugito.clean(options.dist))
+    .description('Deletes all content on destination path')
+    .option('-d, --dist [path]', 'Destination path', 'dist');
 
-if (program.clean) pugito.clean();
-else if (program.compile) pugito.compile();
-else if (program.live) pugito.live();
-else program.outputHelp();
+program.command('compile')
+    .action((options) => {
+        if (options.live) Pugito.live(options.src, options.dist, options.template, options.include);
+        else Pugito.compile(options.src, options.dist, options.template, options.include);
+    })
+    .description('Scans source path and generates content into destination path')
+    .option('-l, --live', 'Watches source path for live compilation', false)
+    .option('-s, --src <path>', 'Source path', 'src')
+    .option('-d, --dist <path>', 'Destination path', 'dist')
+    .option('-t, --template <name>', 'What the name for a template file should contain', 'template')
+    .option('-i, --include <name>', 'What the name for an include/partial file should contain', 'include');
+
+program.parse(process.argv);
