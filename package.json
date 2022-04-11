@@ -22,6 +22,6 @@
         "watch": "^1.0.2"
     },
     "devDependencies": {
-        "jest": "^26.4.2"
+        "jest": "^27.5.1"
     }
 }
