@@ -18,7 +18,7 @@
         "commander": "^9.1.0",
         "fs-extra": "^10.0.1",
         "klaw-sync": "^6.0.0",
-        "pug": "^3.0.0",
+        "pug": "^3.0.2",
         "watch": "^1.0.2"
     },
     "devDependencies": {
