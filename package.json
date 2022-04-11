@@ -15,7 +15,7 @@
         "pugito": "./src/main/cli.js"
     },
     "dependencies": {
-        "commander": "^6.1.0",
+        "commander": "^9.1.0",
         "fs-extra": "^9.0.1",
         "klaw-sync": "^6.0.0",
         "pug": "^3.0.0",
